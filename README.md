@@ -33,6 +33,7 @@ This project implements a classification pipeline using a custom **Modern Neighb
 Your dataset directory must contain:
 
 dataset_name/
+
 ├── trainfeat.pth
 ├── trainlabels.pth
 ├── testfeat.pth
