@@ -35,15 +35,20 @@ Your dataset directory must contain:
 dataset_name/
 
 ├── trainfeat.pth
+
 ├── trainlabels.pth
+
 ├── testfeat.pth
+
 ├── testlabels.pth
 
 
 Optional (auto-generated if not present):
 
 dataset_name/
+
 ├── pca/<dim>/
+
 ├── nca/<dim>/
 
 
@@ -57,5 +62,5 @@ Install required dependencies:
 pip install torch scikit-learn numpy tqdm joblib
 
 Run the script with:
-python your_script.py --dataset diagset_tiny
+python your_script.py --dataset caltech256
 
