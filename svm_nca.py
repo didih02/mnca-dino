@@ -131,22 +131,3 @@ if __name__ == "__main__":
     parser.add_argument("--seed", default=None, type=int, help="""Set your random number""")
     args = parser.parse_args()
     main(args.dataset, args.act_nca, args.n_component, args.init_nca, args.float16, args.seed)
-
-    #Example:
-    #python3 nca.py --dataset cifar10 ==> without nca
-    #python3 nca.py --dataset cifar_10 --act_nca True --n_component 20 --svd_solver randomized --float16 True==> with nca
-
-
-    # note for SVM_classifier #https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html
-    # C=1.0,            # Regularization parameter. Higher values mean stricter margin (low bias, high variance).
-    # kernel='rbf',     # Kernel type: 'linear', 'poly', 'rbf', 'sigmoid', or custom.
-    # degree=3,         # Degree for 'poly' kernel. Ignored by other kernels.
-    # gamma='scale',    # Kernel coefficient: 'scale', 'auto', or a float value for poly kernel.
-    # coef0=0.0,        # Independent term in 'poly' and 'sigmoid' kernels.
-    # tol=1e-3,         # Tolerance for stopping criterion.
-    # class_weight='balanced', # Adjusts weights inversely proportional to class frequencies.
-    # max_iter=-1,      # Limit on iterations within solver, -1 for no limit.
-    # probability=True, # Enable probability estimates. Slower but useful.
-    # random_state=42   # Seed for reproducible output.
-
-#update 22 march 2026, adding new column: seed as random_state for SVM classifier
