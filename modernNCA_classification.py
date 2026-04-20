@@ -127,7 +127,7 @@ def main_function(dataset, _dim, _dropout, _d_block, _n_blocks, _temp,
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser('ModernNCA Classification')
-    parser.add_argument("--dataset", default="diagset_tiny", type=str, help="""set your actual name of your dataset which has been extracted""")
+    parser.add_argument("--dataset", default="caltech256", type=str, help="""set your actual name of your dataset which has been extracted""")
     parser.add_argument("--dim", default=128, type=int, help="Output dimension" )
     parser.add_argument("--dropout", default=0.1, type=float, help="Dropout rate inside MLP block")
     parser.add_argument("--d_block", default=512, type=int, help="Hidden dimension each MLP block")
