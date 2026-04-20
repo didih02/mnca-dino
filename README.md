@@ -1,11 +1,11 @@
 # mnca-dino
-### Modern Neighborhood Components Analysis using DINO-ViT Features for Image Classification with Feature Reduction
+### Modern Neighborhood Components Analysis (MNCA) using DINO-ViT Features for Image Classification with Feature Reduction
 
 Thanks to [TALENT Library](https://github.com/LAMDA-Tabular/TALENT/tree/main) which provide the library for MNCA.
 
 This research will be presented on PP-RAI 2026 (the 7th Polish Conference on Artificial Intelligence). For more information, please contact me: didihrizki@agh.edu.pl. The code will be uploaded when the paper has been presented.
 
-## ModernNCA Classification Pipeline
+## MNCA Classification Pipeline
 
 This project implements a robust classification pipeline using a custom **Modern Neighborhood Components Analysis (ModernNCA)** model built with PyTorch. 
 
