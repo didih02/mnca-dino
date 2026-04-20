@@ -120,7 +120,7 @@ def main(dataset, act_nca, n_component, init_args, fp16, seed):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser('nca')
-    parser.add_argument("--dataset", default="caltech101", type=str, help="""set your actual name of your dataset and folder which you save
+    parser.add_argument("--dataset", default="caltech256", type=str, help="""set your actual name of your dataset and folder which you save
                         your .pth file""")
     parser.add_argument("--act_nca", default=False, type=utils_custom.bool_flag, help="""set True if you want using nca""")
     parser.add_argument("--n_component", default=20, type=int, help="""using this if you used nca""")
