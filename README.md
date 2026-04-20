@@ -63,3 +63,19 @@ pip install torch scikit-learn numpy tqdm joblib
 Run the script with:
 python your_script.py --dataset caltech256
 
+| Argument        | Type  | Default      | Description                               |
+| --------------- | ----- | ------------ | ----------------------------------------- |
+| `--dataset`     | str   | diagset_tiny | Dataset folder                            |
+| `--dim`         | int   | 128          | Output embedding dimension                |
+| `--dropout`     | float | 0.1          | Dropout rate                              |
+| `--d_block`     | int   | 512          | Hidden size of MLP block                  |
+| `--n_block`     | int   | 1            | Number of MLP blocks                      |
+| `--temp`        | float | 0.5          | Temperature scaling                       |
+| `--sample_rate` | float | 0.5          | Memory bank sampling rate                 |
+| `--epoch`       | int   | 50           | Training epochs                           |
+| `--batch_size`  | int   | 128          | Batch size                                |
+| `--lr`          | float | 1e-3         | Learning rate                             |
+| `--mode`        | int   | 0            | Model mode                                |
+| `--folder_name` | str   | config_0     | Output folder                             |
+| `--activation`  | str   | relu         | Activation function                       |
+| `--reduce`      | str   | PCA          | Dimensionality reduction (`PCA` or `NCA`) |
