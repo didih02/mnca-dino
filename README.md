@@ -47,11 +47,11 @@ Optional (auto-generated if not present):
 
 dataset_name/
 
-├── pca/<dim>/
+├── pca/dim/
 
-├── nca/<dim>/
+├── nca/dim/
 
-
+dim:dimension
 ---
 
 ## ⚙️ Installation
