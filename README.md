@@ -188,7 +188,7 @@ All scripts (svm_pca.py, svm_nca.py, mlp_pca.py, mlp_nca.py) utilize a standardi
 | `--seed` | `None` | Set an integer (e.g., 42) for reproducible results. |
 
 ### Expected Outputs & Results
-After execution, a result directory is created based on your chosen method (e.g., classify_pca_svd_solver_auto/). Inside, you will find:
+After execution, a result directory is created based on your chosen method (e.g., classify_pca_svd_solver_auto/). Inside, you will find the files like this:
 
 ```text
 dataset_name/
