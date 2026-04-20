@@ -5,8 +5,6 @@ Thanks to [TALENT Library](https://github.com/LAMDA-Tabular/TALENT/tree/main) wh
 
 This research will be presented on PP-RAI 2026 (the 7th Polish Conference on Artificial Intelligence). For more information, please contact me: didihrizki@agh.edu.pl. The code will be uploaded when the paper has been presented.
 
-### How to use this code:
-
 ## ModernNCA Classification Pipeline
 
 This project implements a robust classification pipeline using a custom **Modern Neighborhood Components Analysis (ModernNCA)** model built with PyTorch. 
@@ -54,8 +52,6 @@ dataset_name/
 ├── testfeat.pth     # DINO-ViT Testing features
 └── testlabels.pth   # Testing labels
 ```
-
-
 
 ## Installation
 
