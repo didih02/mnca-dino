@@ -130,7 +130,7 @@ def main(dataset, act_pca, n_component, svd_solver_args, fp16, seed):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser('PCA')
-    parser.add_argument("--dataset", default="caltech101", type=str, help="""set your actual name of your dataset and folder which you save
+    parser.add_argument("--dataset", default="caltech256", type=str, help="""set your actual name of your dataset and folder which you save
                         your .pth file""")
     parser.add_argument("--act_pca", default=False, type=utils_custom.bool_flag, help="""set True if you want using PCA""")
     parser.add_argument("--n_component", default=20, type=int, help="""using this if you used PCA""")
