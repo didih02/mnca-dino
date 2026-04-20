@@ -43,7 +43,7 @@ dataset_name/
 ├── testlabels.pth
 
 
-Optional (auto-generated if not present):
+Optional (auto-generated if not present, dim:dimension):
 
 dataset_name/
 
@@ -51,7 +51,6 @@ dataset_name/
 
 ├── nca/dim/
 
-dim:dimension
 ---
 
 ## ⚙️ Installation
