@@ -65,7 +65,7 @@ python your_script.py --dataset caltech256
 
 | Argument        | Type  | Default      | Description                               |
 | --------------- | ----- | ------------ | ----------------------------------------- |
-| `--dataset`     | str   | diagset_tiny | Dataset folder                            |
+| `--dataset`     | str   | caltech256   | Dataset folder                            |
 | `--dim`         | int   | 128          | Output embedding dimension                |
 | `--dropout`     | float | 0.1          | Dropout rate                              |
 | `--d_block`     | int   | 512          | Hidden size of MLP block                  |
@@ -79,3 +79,61 @@ python your_script.py --dataset caltech256
 | `--folder_name` | str   | config_0     | Output folder                             |
 | `--activation`  | str   | relu         | Activation function                       |
 | `--reduce`      | str   | PCA          | Dimensionality reduction (`PCA` or `NCA`) |
+
+🧠 Dimensionality Reduction
+
+If dim < 384, dimensionality reduction is applied.
+
+PCA
+Uses sklearn.decomposition.PCA
+Cached in:
+dataset/pca/<dim>/
+
+NCA
+Uses sklearn.neighbors.NeighborhoodComponentsAnalysis
+Cached in:
+dataset/nca/<dim>/
+
+If cached files exist, they are loaded instead of recomputed.
+
+🏋️ Training
+Optimizer: AdamW
+Loss: Negative Log Likelihood (NLL Loss)
+Uses a memory bank (full or sampled training set)
+📊 Evaluation
+
+Metrics computed on the test set:
+
+Accuracy
+Precision (weighted)
+Recall (weighted)
+F1-score (weighted)
+
+💾 Output
+
+Results are saved to:
+
+<folder_name>/mnca_<mode>/results_<dataset>.csv
+
+Each row format:
+
+accuracy;precision;recall;f1;dim;dropout;d_block;n_blocks;temp;sample_rate;epoch;batch_size;lr
+
+🔁 Reproducibility
+Random seeds fixed using:
+set_seeds(42)
+Deterministic CUDA behavior enabled
+
+📝 Notes
+Input features are standardized using StandardScaler
+Supports both NumPy arrays and PyTorch tensors
+Model runs on GPU (.cuda() required)
+⚠️ Requirements
+CUDA-enabled GPU recommended
+Ensure dataset tensors are compatible with PyTorch
+
+python modernNCA_classification_new.py \
+  --dataset my_data \
+  --dim 128 \
+  --epoch 100 \
+  --reduce NCA
