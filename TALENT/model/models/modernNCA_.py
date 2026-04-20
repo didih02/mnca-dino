@@ -9,6 +9,7 @@ from typing import Optional
 # https://pdfs.semanticscholar.org/446a/09cfd212400d7c97032c98c4c9ed3fac4eb2.pdf
 # https://medium.com/data-science/understanding-latent-space-in-machine-learning-de5a7c687d8d
 
+#this is an original code for the MLP block and encoder of ModernNCA, you can replace it with any block and encoder you want, such as CNN, RNN, Transformer, etc. The MLP block is a simple feedforward neural network with one hidden layer and dropout, and the encoder is a simple feedforward neural network with two hidden layers and dropout. You can modify the architecture of the MLP block and encoder according to your needs.
 class MLP_Block(nn.Module):
     def __init__(self, d_in: int, d: int, dropout: float, activation="relu"):
         super().__init__()
@@ -31,7 +32,7 @@ class MLP_Block(nn.Module):
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         return self.block(x)
 
-# class AE_Baseline(nn.Module):
+# this is the code for the encoder of ModernNCA, you can replace it with any encoder you want, such as MLP, CNN, RNN, Transformer, etc.
 class mnca_1(nn.Module):
     def __init__(self, d_in: int, dropout: float, d: int, latent_dim=128, activation="relu"):
         super().__init__()
@@ -50,52 +51,6 @@ class mnca_1(nn.Module):
         self.activation_name = activation
     def forward(self,x):
         z = self.encoder(x)
-        return z
-
-# class AE_Wide(nn.Module):
-class mnca_2(nn.Module):
-    def __init__(self, d_in: int, h1: int, dropout: float, latent_dim=128, activation="relu"):
-        super().__init__()
-        h2 = 256
-        act = get_activation(activation)
-        self.encoder=nn.Sequential(
-            nn.Linear(d_in,h1), 
-            act,
-            # nn.Dropout(dropout),
-            nn.Linear(h1,h2), 
-            act,
-            # nn.Dropout(dropout),
-            nn.Linear(h2,latent_dim)
-        )
-        self.activation_name = activation
-    def forward(self,x):
-        z=self.encoder(x)
-        return z
-
-# class AE_MultiBottleneck(nn.Module):
-class mnca_3(nn.Module):
-    #hidden layer: 3
-    def __init__(self, d_in: int, dropout: float, d: int, latent_dim=128, activation="relu"):
-        super().__init__()
-        h1 = 256
-        h2 = 128
-        bneck = int((h2+latent_dim)/2)
-        act = get_activation(activation)
-        self.encoder = nn.Sequential(
-            nn.Linear(d_in,h1), 
-            act,
-            # nn.Dropout(dropout),
-            nn.Linear(h1,h2), 
-            act,
-            # nn.Dropout(dropout),
-            nn.Linear(h2,bneck), 
-            act,
-            # nn.Dropout(dropout),
-            nn.Linear(bneck,latent_dim)
-        )
-        self.activation_name = activation
-    def forward(self,x):
-        z=self.encoder(x)
         return z
 
 def get_activation(name):
@@ -150,19 +105,6 @@ class ModernNCA(nn.Module):
                 )
             self.encoder = nn.Linear(self.d_in, dim)
         #-------------------------------------------
-        
-        elif self.mode==1:
-            print(self.mode)
-            self.encoder = mnca_1(d_in=self.d_in, latent_dim=self.dim, dropout=self.dropout, d=self.d_block, activation=activation)
-        
-        elif self.mode==2:
-            print(self.mode)
-            self.encoder = mnca_2(d_in=self.d_in, h1=self.d_block, latent_dim=self.dim, dropout=self.dropout, activation=self.activation)
-        
-        elif self.mode==3:
-            print(self.mode)
-            self.encoder = mnca_3(d_in=self.d_in, latent_dim=self.dim, dropout=self.dropout, d=self.d_block, activation=self.activation)
-
         else:
             self.encoder = mnca_1(d_in=self.d_in, latent_dim=self.dim, dropout=self.dropout, d=self.d_block, activation=self.activation)
 
