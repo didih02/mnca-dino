@@ -210,3 +210,5 @@ The pipeline automatically computes weighted metrics to provide a fair assessmen
 
 - Accuracy: Overall hit rate.
 - Weighted Precision/Recall/F1-Score: Metrics adjusted for the number of instances in each class.
+
+For more questions, please contact me: didihrizki@agh.edu.pl.
