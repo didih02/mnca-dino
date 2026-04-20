@@ -29,7 +29,7 @@ In this implementation, we focus exclusively on **DINO-ViT features**. These sel
 
 ## Features
 
-- **ModernNCA model**
+- MNCA classification
 - Dimensionality reduction:
   - PCA (Principal Component Analysis)
   - NCA (Neighborhood Components Analysis)
