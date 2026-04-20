@@ -104,11 +104,10 @@ NCA:
 
 If cached files exist, they are loaded instead of recomputed.
 
-### Training Setup
+### Training Default Setup
 - Optimizer: AdamW
 - Loss: Negative Log Likelihood (NLL Loss)
 - Uses a memory bank (full or sampled training set)
-- Evaluation
 
 ### Metrics computed on the test set:
 
