@@ -179,7 +179,7 @@ When you run any of the core scripts (svm_pca.py, svm_nca.py, mlp_pca.py and mlp
 All scripts (svm_pca.py, svm_nca.py, mlp_pca.py, mlp_nca.py) utilize a standardized argument parser:
 
 | Argument | Default | Description |
-| :--- | :--- | :--- |
+| :---- | :---- | :---- |
 | `--dataset` | `caltech256` | Name of the folder containing your `.pth` feature files. |
 | `--act_pca` | `False` | Set to `True` to enable dimensionality reduction. Change to --act_nca to use NCA|
 | `--n_component` | `20` | The target number of dimensions (e.g., 32, 64, 128). |
